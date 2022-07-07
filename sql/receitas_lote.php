@@ -1,4 +1,4 @@
-<?php require '../obj/classes.php'; require '../server - protejer/conectar.php' ?>
+<?php require '../obj/classes.php'; require '../server/conectar.php' ?>
 
 <header>
 <link rel="stylesheet" href="../CSS/estilo_lote.css">

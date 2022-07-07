@@ -1,4 +1,4 @@
-<?php require '../obj/classes.php'; require __DIR__ .'\..\server - protejer\conectar.php'; ?>
+<?php require '../obj/classes.php'; require __DIR__ .'\..\server\conectar.php'; ?>
 
 <h2>Cadastrar tipo de receita ou despesa</h2> <br>
 

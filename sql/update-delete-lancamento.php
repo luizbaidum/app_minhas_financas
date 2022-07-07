@@ -1,6 +1,6 @@
 <?php
 
-require_once('../server - protejer/conectar.php');
+require_once('../server/conectar.php');
 
 if(isset($_GET['delete'])) {
 

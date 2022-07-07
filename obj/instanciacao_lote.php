@@ -1,5 +1,5 @@
 <?php
-	require '../server - protejer/conectar.php';
+	require '../server/conectar.php';
 
 	//recupera valores e cadastra despesa
 	if(isset($_POST['lancarDespesa'])) {

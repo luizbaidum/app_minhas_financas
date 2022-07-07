@@ -1,6 +1,6 @@
 <?php 
 
-require __DIR__ .'\..\server - protejer\conectar.php';
+require __DIR__ .'\..\server\conectar.php';
 
 //RECUPERA TIPOS DE DESPESAS (opções de despesas p/ lançamentos)
 $retorno_despesas = $con->prepare("

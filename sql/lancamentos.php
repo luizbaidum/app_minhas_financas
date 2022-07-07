@@ -1,6 +1,6 @@
 <?php 
 
-require '../server - protejer/conectar.php';
+require '../server/conectar.php';
 
 include '../obj/instanciacao.php';
 
