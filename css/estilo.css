@@ -1,0 +1,108 @@
+* {
+	font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+	margin: 2% 10%;
+}
+
+section {
+	width: 100%;
+	margin-bottom: 3%;
+}
+
+section * {
+	margin: 0.4%;
+}
+
+select {
+	width: 200px;
+}
+
+.titulo-pagina {
+	font-family: Helvetica, sans-serif;
+	font-size: 5em;
+}
+
+.titulo-section {
+	font-family: Helvetica, sans-serif;
+	font-size: 2em;
+}
+
+.menu {
+	margin: 2% 0%;
+}
+
+table {
+	width:100%;
+	border:1px solid black;
+}
+
+tr td {
+	border: 1px solid black;
+	width: 25%;
+	text-align: center;
+}
+
+.table-header {
+	background-color: #0E3E3A;
+	text-align: center;
+	color: white;
+}
+
+.contador {
+	width: 100%;
+	text-align: right;
+	color: grey;
+}
+
+.somatoria {
+	font-weight: bold;
+}
+
+.green {
+	color: #0B7D21;
+}
+
+.red {
+	color: red;
+}
+
+    #botoes {
+        display: flex;
+        flex-direction: row;
+        width: 420px;
+        height: 20px;
+        padding: 5px;
+}
+    #agrupamento {
+        display: flex;
+        flex-direction: row;
+        width: 850px;
+}
+    .grupo-despesa {
+        width: 135px;
+        height: 20px;
+        margin-top: 10px;
+    } 
+
+    .grupo-despesa select {
+        margin-top: 0;
+        margin-bottom: 12.5px;
+        text-align: center;
+    }
+
+    #aviso {
+        width: 800px; 
+        height: 300px; 
+        background: grey; 
+        position: absolute; 
+        top: 10px; 
+        left: 20px;
+        text-align: center;
+        padding-top: 190px;
+    }
+
+
+
+  
