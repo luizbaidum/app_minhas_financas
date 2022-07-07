@@ -29,7 +29,7 @@
     <td>Excluir</td>
 </tr>
 
-<form action="sql/update-delete-lancamento.php">
+
 <?php 
     $somatoria = 0;
 
@@ -38,10 +38,10 @@
             while($linha = $lancamentos_todos->fetch(PDO::FETCH_OBJ)) {
 
             echo '<tr>';
-            echo '<td>'. $linha->data .'</td>';
-            echo '<td>'. $linha->nome_grupo .'</td>';
-            echo '<td>'. $linha->descricao .'</td>';
-            echo '<td>'. $linha->valor .'</td>';
+            echo '<td id="data">'. $linha->data .'</td>';
+            echo '<td id="nome_grupo">'. $linha->nome_grupo .'</td>';
+            echo '<td id="descricao">'. $linha->descricao .'</td>';
+            echo '<td id="valor">'. $linha->valor .'</td>';
             echo '<td><button type="submit" name="update" value="'.$linha->id_lancamento.'"> Alterar </button></td>';
             echo '<td><button type="submit" name="delete" value="'.$linha->id_lancamento.'"> Excluir </button></td>';
             echo '</tr>';
@@ -53,10 +53,10 @@
         while($linha = $lancamentos_receitas->fetch(PDO::FETCH_OBJ)) {
 
             echo '<tr>';
-            echo '<td>'. $linha->data .'</td>';
-            echo '<td>'. $linha->nome_grupo .'</td>';
-            echo '<td>'. $linha->descricao .'</td>';
-            echo '<td>'. $linha->valor .'</td>';
+            echo '<td id="data">'. $linha->data .'</td>';
+            echo '<td id="nome_grupo">'. $linha->nome_grupo .'</td>';
+            echo '<td id="descricao">'. $linha->descricao .'</td>';
+            echo '<td id="valor">'. $linha->valor .'</td>';
             echo '<td><button type="submit" name="update" value="'.$linha->id_lancamento.'"> Alterar </button></td>';
             echo '<td><button type="submit" name="delete" value="'.$linha->id_lancamento.'"> Excluir </button></td>';
             echo '</tr>';
@@ -67,20 +67,20 @@
 
         while($linha = $lancamentos_despesas->fetch(PDO::FETCH_OBJ)) {
 
-            echo '<tr>';
-            echo '<td>'. $linha->data .'</td>';
-            echo '<td>'. $linha->nome_grupo .'</td>';
-            echo '<td>'. $linha->descricao .'</td>';
-            echo '<td>'. $linha->valor .'</td>';
+            echo '<tr id="tr">';
+            echo '<td class="data">'. $linha->data .'</td>';
+            echo '<td id="nome_grupo">'. $linha->nome_grupo .'</td>';
+            echo '<td id="descricao">'. $linha->descricao .'</td>';
+            echo '<td id="valor">'. $linha->valor .'</td>';
             echo '<td><button type="submit" name="update" value="'.$linha->id_lancamento.'"> Alterar </button></td>';
-            echo '<td><button type="submit" name="delete" value="'.$linha->id_lancamento.'"> Excluir </button></td>';
+            echo '<td><button type="submit" onclick="confirmarExclusao()" name="delete" value="'.$linha->id_lancamento.'"> Excluir </button></td>';
             echo '</tr>';
 
             $somatoria = $linha->valor + $somatoria;
         }
-    }
+    } //APAGGUEI O FORM E O ACTION
 ?>
-</form>
+
 
     <tr class="somatoria <?php if($somatoria>0) echo 'green'; else echo 'red'; ?>">
         <td colspan="4" style="text-align: right;">Resultado: <?php echo $somatoria; ?></td>

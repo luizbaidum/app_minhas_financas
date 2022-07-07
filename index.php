@@ -136,8 +136,25 @@
 		{
 			location.reload();
 		}
+
+		function confirmarExclusao()
+		{	
+			let btn = document.getElementById('tr');
+			let linha = btn.closest('.data')
+			//let data = linha.innerHTML;
+
+			console.log(btn);
+			console.log(linha);
+			//console.log(data);
+
+			//window.confirm("Confirma a exclusão do item: "+ data.textContent +" | grupo | descrição | valor ?");
+			//está pegando o primeiro elemento
+			//confirm não impede a exclusão se eu clicar em cancelar
+		}
 	</script>
 </html>
 //PAGINAÇÃO NA TABELA (quando ficar grande)
 
 //FAZER UPDATES
+
+//ARRUMAR CASAS DECIMAIS
