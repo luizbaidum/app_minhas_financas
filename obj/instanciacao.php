@@ -2,6 +2,13 @@
 	
 	require '../obj/classes.php';
 
+	echo '<pre>';
+	print_r($_POST);
+
+	//verificar que é post atualizar
+	//de alguma forma fazer reconhecer se é receita ou despesa para montar obj (este eu não sei se é obrigatório)
+	//depois fazer um update por id do lancamento
+
 	//recupera valores e cadastra grupo
 	if(isset($_POST['cadastrarGrupo'])) {
 
@@ -49,7 +56,6 @@
 	}
 
 	//recupera valores e cadastra receita
-
 	if(isset($_POST['lancarReceita'])) {
 
 		if($_POST['grupoReceita'] === 'null') {

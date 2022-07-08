@@ -2,13 +2,17 @@
 
 require_once('../server/conectar.php');
 
+if(isset($_GET['cancelar'])) {
+    header('location: ../index.php');
+};
+
 if(isset($_GET['delete'])) {
 
     $item = $_GET['delete'];
 
     $sql = $con->prepare("DELETE FROM lancamentos WHERE lancamentos.id_lancamento = '$item'");
 
-    $sql->execute();
+    $sql->execute();    
 
     header('location: ../index.php');
 }
@@ -27,9 +31,15 @@ if(isset($_GET['update'])) {
     $retorno->execute();
 
     $resultado = $retorno->fetch();
+
+    if($resultado['valor'] < 0) {
+        $tipo_lancamento = 'Despesa';
+    } else {
+        $tipo_lancamento = 'Receita';
+    }
 ?>
 
-    <form method="post" action="obj/instanciacao.php">
+    <form method="post" action="../obj/instanciacao.php">
         <span style="border: 1px solid black; padding: 2px">ID lançamento: <?= $resultado['id_lancamento']; ?></span>
 				
 		<input type="date" name="data" value="<?= $resultado['data']; ?>" required>
@@ -40,7 +50,7 @@ if(isset($_GET['update'])) {
 
                 require 'recuperaLancamentos.php';
 					
-				echo "<select name=grupoReceita>";
+				echo "<select name=grupo$tipo_lancamento>";
 
 					while($linha = $retorno_receitas->fetch(PDO::FETCH_OBJ))
 					{	
@@ -58,7 +68,7 @@ if(isset($_GET['update'])) {
 
 		<input type="number" min="0.00" max="10000.00" step="0.01" name="valor" value="<?= $resultado['valor']; ?>" required>
 
-		<input type="submit" name="lancarReceita" value="Atualizar">
+		<input type="submit" name="operacao" value="Atualizar">
 	</form>
 
     //FAZER VALER PARA RECEITAS E DESPESAS (por enquanto estou puxando apenas receiras)

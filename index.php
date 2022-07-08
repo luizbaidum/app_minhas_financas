@@ -110,48 +110,7 @@
 		
 	</body>
 
-	<script>
-		function popupTipo()
-		{
-			let popUp = window.open('sql/tipo_lote.php', 
-			'popup',
-			"width=600, height=600, top=150, left=700, scrollbars=yes");
-		}
-
-		function popupDespesasLote()
-		{
-			let popUp = window.open('sql/despesas_lote.php?numero=0', 
-			'popup',
-			"width=900, height=600, top=150, left=500, scrollbars=yes");
-		}
-
-		function popupReceitasLote()
-		{
-			let popUp = window.open('sql/receitas_lote.php?numero=0', 
-			'popup',
-			"width=900, height=600, top=150, left=500, scrollbars=yes");
-		}
-
-		function reloadpg()
-		{
-			location.reload();
-		}
-
-		function confirmarExclusao()
-		{	
-			let btn = document.getElementById('tr');
-			let linha = btn.closest('.data')
-			//let data = linha.innerHTML;
-
-			console.log(btn);
-			console.log(linha);
-			//console.log(data);
-
-			//window.confirm("Confirma a exclusão do item: "+ data.textContent +" | grupo | descrição | valor ?");
-			//está pegando o primeiro elemento
-			//confirm não impede a exclusão se eu clicar em cancelar
-		}
-	</script>
+	<script src="js/scripts.js"></script>
 </html>
 //PAGINAÇÃO NA TABELA (quando ficar grande)
 
