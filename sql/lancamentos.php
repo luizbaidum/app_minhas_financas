@@ -40,7 +40,7 @@ include '../obj/instanciacao.php';
 
 		if($sql) {
 
-			header('Location: http://localhost/app_minhas_financas/index.php');
+			header('Location: http://localhost/projeto_minhas_financas/app_minhas_financas/');
 		}
 
 	} else if($_SESSION['receita']) {
@@ -60,6 +60,30 @@ include '../obj/instanciacao.php';
 
 		if($sql) {
 
-			header('Location: http://localhost/app_minhas_financas/index.php');
+			header('Location: http://localhost/projeto_minhas_financas/app_minhas_financas/');
+		} 
+
+	} else if($_SESSION['atualizar']) {
+
+		$atualizar = $_SESSION['atualizar'];
+
+		$id_lancamento = $atualizar->getId_lancamento();
+		$id_grupo = $atualizar->getId_grupo();
+		$data = $atualizar->getData();
+		$descricao = $atualizar->getDescricao();
+		$valor = $atualizar->getValor();
+
+		$sql = $con->prepare("
+			UPDATE lancamentos SET id_grupo = '$id_grupo', data = '$data', descricao = '$descricao', valor = '$valor' 
+			WHERE lancamentos.id_lancamento = '$id_lancamento';
+		");
+
+		$sql->execute();
+
+		session_destroy();
+
+		if($sql) {
+
+			header('Location: http://localhost/projeto_minhas_financas/app_minhas_financas/');
 		} 
 	}

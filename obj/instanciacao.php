@@ -49,7 +49,6 @@
 	}
 
 	//recupera valores e cadastra receita
-
 	if(isset($_POST['lancarReceita'])) {
 
 		if($_POST['grupoReceita'] === 'null') {
@@ -70,6 +69,34 @@
 		$receita->setValor($_POST['valor']);
 
 		$_SESSION['receita'] = $receita;
+
+		header('Location: ../sql/lancamentos.php');
+	}
+
+	//recupera valores e faz update
+	if(isset($_POST['operacao'])) {
+
+		if($_POST['RouD'] == 'D') {
+
+			$atualizar = new Despesa(); 
+
+			$atualizar->setId_grupo($_POST['grupoDespesa']);
+		} else {
+
+			$atualizar = new Receita();
+
+			$atualizar->setId_grupo($_POST['grupoReceita']);
+		}
+
+		$atualizar->setId_lancamento($_POST['id_lancamento']);
+
+		$atualizar->setData($_POST['data']);
+
+		$atualizar->setDescricao($_POST['descricao']);
+
+		$atualizar->setValor($_POST['valor']);
+
+		$_SESSION['atualizar'] = $atualizar;
 
 		header('Location: ../sql/lancamentos.php');
 	}
