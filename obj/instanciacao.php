@@ -2,13 +2,6 @@
 	
 	require '../obj/classes.php';
 
-	echo '<pre>';
-	print_r($_POST);
-
-	//verificar que é post atualizar
-	//de alguma forma fazer reconhecer se é receita ou despesa para montar obj (este eu não sei se é obrigatório)
-	//depois fazer um update por id do lancamento
-
 	//recupera valores e cadastra grupo
 	if(isset($_POST['cadastrarGrupo'])) {
 
@@ -76,6 +69,34 @@
 		$receita->setValor($_POST['valor']);
 
 		$_SESSION['receita'] = $receita;
+
+		header('Location: ../sql/lancamentos.php');
+	}
+
+	//recupera valores e faz update
+	if(isset($_POST['operacao'])) {
+
+		if($_POST['RouD'] == 'D') {
+
+			$atualizar = new Despesa(); 
+
+			$atualizar->setId_grupo($_POST['grupoDespesa']);
+		} else {
+
+			$atualizar = new Receita();
+
+			$atualizar->setId_grupo($_POST['grupoReceita']);
+		}
+
+		$atualizar->setId_lancamento($_POST['id_lancamento']);
+
+		$atualizar->setData($_POST['data']);
+
+		$atualizar->setDescricao($_POST['descricao']);
+
+		$atualizar->setValor($_POST['valor']);
+
+		$_SESSION['atualizar'] = $atualizar;
 
 		header('Location: ../sql/lancamentos.php');
 	}

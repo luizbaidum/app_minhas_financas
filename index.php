@@ -114,6 +114,4 @@
 </html>
 //PAGINAÇÃO NA TABELA (quando ficar grande)
 
-//FAZER UPDATES
-
 //ARRUMAR CASAS DECIMAIS
