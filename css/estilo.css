@@ -68,40 +68,42 @@ tr td {
 	color: red;
 }
 
-    #botoes {
-        display: flex;
-        flex-direction: row;
-        width: 420px;
-        height: 20px;
-        padding: 5px;
+#botoes {
+    display: flex;
+    flex-direction: row;
+    width: 420px;
+    height: 20px;
+    padding: 5px;
 }
-    #agrupamento {
-        display: flex;
-        flex-direction: row;
-        width: 850px;
+
+#agrupamento {
+    display: flex;
+    flex-direction: row;
+    width: 850px;
 }
-    .grupo-despesa {
-        width: 135px;
-        height: 20px;
-        margin-top: 10px;
-    } 
 
-    .grupo-despesa select {
-        margin-top: 0;
-        margin-bottom: 12.5px;
-        text-align: center;
-    }
+.grupo-despesa {
+    width: 135px;
+    height: 20px;
+    margin-top: 10px;
+} 
 
-    #aviso {
-        width: 800px; 
-        height: 300px; 
-        background: grey; 
-        position: absolute; 
-        top: 10px; 
-        left: 20px;
-        text-align: center;
-        padding-top: 190px;
-    }
+.grupo-despesa select {
+    margin-top: 0;
+    margin-bottom: 12.5px;
+    text-align: center;
+}
+
+#aviso {
+    width: 800px; 
+    height: 300px; 
+    background: grey; 
+    position: absolute; 
+    top: 10px; 
+    left: 20px;
+    text-align: center;
+    padding-top: 190px;
+}
 
 
 

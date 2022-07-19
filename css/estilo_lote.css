@@ -16,7 +16,12 @@
     width: 135px;
     height: 20px;
     margin-top: 10px;
-} 
+}
+
+#parte1 {
+    width: 320px; 
+    margin: 5px 0px;
+}
 
 .grupo-despesa select, .grupo-receita select {
     margin-top: 0;
@@ -34,4 +39,14 @@
     left: 20px;
     text-align: center;
     padding-top: 190px;
+}
+
+@-moz-document url-prefix() {
+    .grupo-despesa select, .grupo-receita select {
+        margin-bottom: 10.3px;
+    }
+
+    #parte1 {
+        width: 290px; 
+    }
 }
