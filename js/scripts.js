@@ -7,7 +7,7 @@
 
 		function popupDespesasLote()
 		{
-			let popUp = window.open('sql/despesas_lote.php?numero=0', 
+			let popUp = window.open('sql/despesas_lote.php', 
 			'popup',
 			"width=900, height=600, top=150, left=500, scrollbars=yes");
 		}
